@@ -1,3 +1,9 @@
-On this blog i would be writing about some of the latest technologies and how to use them.
+# A sample tech blog made using django 
 
-This site is currently in development phase so be ready to face some bugs.
+## Features :
+* Can add images to posts
+* Different sections for posts
+* Responsive
+
+### Credits: 
+* topbestof.com - sample posts taken from here
