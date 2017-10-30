@@ -4,7 +4,7 @@ from django.utils import timezone
 
 # Create your views here.
 def home(request):
-	posts = Post.objects.filter(section__iexact='home').order_by('-published_date')
+	posts = Post.objects.order_by('-published_date')
 	return render(request, 'blog/home.html', {'posts' : posts})
 
 def news(request):
