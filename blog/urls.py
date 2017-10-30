@@ -1,5 +1,10 @@
 from django.conf.urls import url
 from . import views
+# Import settings if not imported
+from django.conf import settings
+# Import static if not imported
+from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^home$', views.home, name='home'),
@@ -9,3 +14,7 @@ urlpatterns = [
     url(r'^entrepreneur$', views.entrepreneur, name='entrepreneur'),
     url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
